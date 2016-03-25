@@ -52,6 +52,8 @@ ifneq (true,$(CI))
 	  ! echo 'Error: No gh-pages branch, run `make setup-ghpages` to initialize it.'
 endif
 ifeq (true,$(PUSH_GHPAGES))
+	echo CI $(CI)
+	echo CI_IS_PR $(CI_IS_PR)
 	mkdir $(GHPAGES_TMP)
 	cp -f $^ $(GHPAGES_TMP)
 	git clean -qfdX
